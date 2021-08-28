@@ -41,7 +41,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: ${{ matrix.java }}
-        run: chmod +x gradlew
+      - run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
   publish:
@@ -64,7 +64,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 16
-        run: chmod +x gradlew
+      - run: chmod +x gradlew
       - name: Build and Publish Artifacts
         run: ./gradlew -x test publish
         env:
