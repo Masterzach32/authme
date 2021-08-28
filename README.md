@@ -1,6 +1,6 @@
 <div align="center">
 
-<img alt="Auth Me Icon" src="fabric/src/main/resources/assets/authme/icon.png" width="128">
+<img alt="Auth Me Icon" src="common/src/main/resources/icon.png" width="128">
 
 # MC Auth
 
