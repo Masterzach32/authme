@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "mcauth",
+  "version": "${version}",
+  "name": "MC Auth",
+  "description": "Authenticate yourself in Minecraft and re-validate your session",
+  "authors": [
+    "Zach Kozar"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Masterzach32/authme",
+    "sources": "https://github.com/Masterzach32/authme",
+    "issues": "https://github.com/Masterzach32/authme/issues"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "mcauth.fabric.AuthMe"
+      }
+    ],
+    "modmenu": [
+      "mcauth.fabric.config.AuthMeConfig\$ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "mcauth.mixins.json"
+  ],
+  "depends": {
+    "java": ">=16",
+    "minecraft": "1.17.x",
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "cloth-config2": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

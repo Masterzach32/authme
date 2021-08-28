@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "[37,)"
+license = "All rights reserved"
+
+[[mods]]
+
+modId = "mcauth"
+version = "${version}"
+displayName = "MC Auth"
+credits = "Fork of axieum's authme, which is a fork of ReAuth."
+authors = "zach kozar"
+logoFile = "icon.png"
+displayURL = "https://github.com/Masterzach32/authme"
+description = '''
+	Authenticate yourself in Minecraft and re-validate your session.
+'''
+
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.mcauth]]
+modId = "forge"
+mandatory = true
+versionRange = "[37.0.31,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.mcauth]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.17,)"
+ordering = "NONE"
+side = "BOTH"

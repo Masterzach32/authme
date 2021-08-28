@@ -1,8 +1,8 @@
 <div align="center">
 
-<img alt="Auth Me Icon" src="src/main/resources/assets/authme/icon.png" width="128">
+<img alt="Auth Me Icon" src="fabric/src/main/resources/assets/authme/icon.png" width="128">
 
-# Auth Me
+# MC Auth
 
 Authenticate yourself in Minecraft and re-validate your session
 
@@ -21,6 +21,8 @@ is available for modern versions of [Minecraft][minecraft] Java Edition.
 
 ## Acknowledgements
 
+- [AuthMe](https://github.com/axieum/authme) by Axieum
+    - This is a fork of the AuthMe mod
 - [ReAuth][reauth] by TechnicianLP
     - The original session re-validator mod for Minecraft `<= 1.12.2`
 

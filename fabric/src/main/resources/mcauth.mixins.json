@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "mcauth.fabric.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [],
+  "server": [],
+  "client": [
+    "DisconnectedScreenMixin",
+    "MinecraftSessionAccessorMixin",
+    "MultiplayerScreenMixin",
+    "RealmsGenericErrorScreenMixin",
+    "RealmsMainScreenAccessMixin",
+    "ScreenChildAccessMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

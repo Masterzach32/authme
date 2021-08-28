@@ -31,7 +31,7 @@ hs_err_pid*
 
 # build
 **/build/
-!src/**/build/
+!fabric/src/**/build/
 
 # wrapper
 !gradle-wrapper.jar
