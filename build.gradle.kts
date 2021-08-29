@@ -61,6 +61,6 @@ release {
     tagCommitMessage = "Release version"
     newVersionCommitMessage = "Next development version"
 
-    val gitConfig = getProperty("gitConfig") as net.researchgate.release.GitAdapter.GitConfig
+    val gitConfig = getProperty("git") as net.researchgate.release.GitAdapter.GitConfig
     gitConfig.requireBranch = "main"
 }
