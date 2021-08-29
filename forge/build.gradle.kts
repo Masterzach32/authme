@@ -58,7 +58,7 @@ dependencies {
 
     implementation(libs.kotlinx.coroutines.core)
 
-    obfRuntimeOnly(libs.forge.jei)
+//    obfRuntimeOnly(libs.forge.jei)
 }
 
 tasks.withType<KotlinCompile> {
