@@ -1,13 +1,13 @@
 modLoader = "javafml"
 loaderVersion = "[37,)"
-license = "All rights reserved"
+license = "MIT"
 
 [[mods]]
 
 modId = "mcauth"
 version = "${version}"
 displayName = "MC Auth"
-credits = "Fork of axieum's authme, which is a fork of ReAuth."
+credits = "Fork of axieum's authme, inspired by ReAuth."
 authors = "zach kozar"
 logoFile = "icon.png"
 displayURL = "https://github.com/Masterzach32/authme"

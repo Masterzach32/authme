@@ -21,7 +21,7 @@ is available for modern versions of [Minecraft][minecraft] Java Edition.
 
 ## Acknowledgements
 
-- [AuthMe](https://github.com/axieum/authme) by Axieum
+- [AuthMe][authme] by Axieum
     - This is a fork of the AuthMe mod
 - [ReAuth][reauth] by TechnicianLP
     - The original session re-validator mod for Minecraft `<= 1.12.2`
@@ -41,11 +41,21 @@ vulnerabilities.
 Auth Me is open-sourced software licenced under the [MIT licence][licence].
 
 [contributing]: .github/CONTRIBUTING.md
+
 [curseforge]: https://curseforge.com/minecraft/mc-mods/auth-me
+
 [curseforge:files]: https://curseforge.com/minecraft/mc-mods/auth-me/files
+
 [fabric]: https://fabricmc.net/
+
 [licence]: https://opensource.org/licenses/MIT
+
 [minecraft]: https://minecraft.net/
+
 [reauth]: https://github.com/TechnicianLP/ReAuth
+
+[authme]: https://github.com/axieum/authme
+
 [releases]: https://github.com/axieum/authme/releases
+
 [security]: .github/SECURITY.md

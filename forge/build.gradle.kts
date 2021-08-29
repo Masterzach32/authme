@@ -8,11 +8,14 @@ plugins {
     id("net.minecraftforge.gradle")
     id("com.github.masterzach32.artifactory")
     kotlin("plugin.serialization")
+    id("com.modrinth.minotaur")
     `maven-publish`
     signing
 }
 
 val common = projects.common.dependencyProject
+val archivesVersion: String by rootProject.ext
+val isRelease: Boolean by rootProject.ext
 
 minecraft {
     mappings("official", libs.versions.mappings.get())
@@ -71,6 +74,26 @@ tasks.jar {
 
 tasks.apiJar {
     manifest()
+}
+
+val publishModrinth by tasks.registering(com.modrinth.minotaur.TaskModrinthUpload::class) {
+    dependsOn(tasks.build)
+    val modrinthProjectId: String? by project
+    val modrinthToken: String? by project
+    onlyIf { isRelease && modrinthProjectId != null && modrinthToken != null }
+
+    token = modrinthToken
+    projectId = modrinthProjectId
+
+    versionName = archivesVersion
+    versionNumber = "${archivesVersion}-forge"
+    uploadFile = tasks.jar.get()
+    addGameVersion(libs.versions.minecraft.get())
+    addLoader("forge")
+}
+
+tasks.publish {
+    dependsOn(publishModrinth)
 }
 
 signing {
