@@ -1,6 +1,6 @@
 package mcauth.common.accessors
 
-import net.minecraft.client.*
+import net.minecraft.client.User
 
 interface SessionAccessor {
 

@@ -1,9 +1,9 @@
 package mcauth.common.gui.component
 
-import net.minecraft.client.gui.components.*
-import net.minecraft.client.gui.screens.*
-import net.minecraft.network.chat.*
-import net.minecraft.resources.*
+import net.minecraft.client.gui.components.ImageButton
+import net.minecraft.client.gui.screens.Screen
+import net.minecraft.network.chat.Component
+import net.minecraft.resources.ResourceLocation
 
 class AuthButton(
     x: Int,

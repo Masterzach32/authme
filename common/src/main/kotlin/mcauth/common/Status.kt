@@ -1,6 +1,6 @@
 package mcauth.common
 
-import net.minecraft.client.resources.language.*
+import net.minecraft.client.resources.language.I18n
 
 enum class Status(val langKey: String, val color: Int) {
     VALID("gui.authme.status.valid", 0x00FF00),

@@ -1,10 +1,11 @@
 package mcauth.forge
 
-import mcauth.common.*
-import mcauth.common.accessors.*
-import net.minecraft.client.*
-import net.minecraftforge.fml.util.*
-import java.lang.reflect.*
+import mcauth.common.Logger
+import mcauth.common.accessors.SessionAccessor
+import net.minecraft.client.Minecraft
+import net.minecraft.client.User
+import net.minecraftforge.fml.util.ObfuscationReflectionHelper
+import java.lang.reflect.Field
 
 object ForgeSessionAccessor : SessionAccessor {
 

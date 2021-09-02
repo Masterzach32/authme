@@ -1,8 +1,10 @@
 package mcauth.fabric
 
-import mcauth.common.accessors.*
-import mcauth.fabric.mixin.*
-import net.minecraft.client.*
+import mcauth.common.accessors.SessionAccessor
+import mcauth.fabric.mixin.MinecraftSessionAccessorMixin
+import mcauth.fabric.mixin.RealmsMainScreenAccessMixin
+import net.minecraft.client.Minecraft
+import net.minecraft.client.User
 
 object FabricSessionAccessor : SessionAccessor {
 

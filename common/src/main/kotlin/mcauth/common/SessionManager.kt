@@ -1,13 +1,17 @@
 package mcauth.common
 
-import com.mojang.authlib.*
-import com.mojang.authlib.exceptions.*
-import com.mojang.authlib.minecraft.*
-import com.mojang.authlib.yggdrasil.*
-import com.mojang.util.*
-import kotlinx.coroutines.*
-import mcauth.common.accessors.*
-import net.minecraft.client.*
+import com.mojang.authlib.Agent
+import com.mojang.authlib.AuthenticationService
+import com.mojang.authlib.UserAuthentication
+import com.mojang.authlib.exceptions.AuthenticationException
+import com.mojang.authlib.minecraft.MinecraftSessionService
+import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService
+import com.mojang.util.UUIDTypeAdapter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import mcauth.common.accessors.SessionAccessor
+import net.minecraft.client.Minecraft
+import net.minecraft.client.User
 import java.util.*
 
 class SessionManager(private val sessionAccessor: SessionAccessor) {

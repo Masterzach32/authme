@@ -1,15 +1,22 @@
 package mcauth.common.gui
 
-import com.mojang.authlib.exceptions.*
-import com.mojang.blaze3d.vertex.*
-import kotlinx.coroutines.*
-import mcauth.common.*
-import mcauth.common.gui.component.*
-import net.minecraft.*
-import net.minecraft.client.gui.*
-import net.minecraft.client.gui.components.*
-import net.minecraft.client.gui.screens.*
-import net.minecraft.network.chat.*
+import com.mojang.authlib.exceptions.InvalidCredentialsException
+import com.mojang.blaze3d.vertex.PoseStack
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
+import mcauth.common.Logger
+import mcauth.common.SessionManager
+import mcauth.common.gui.component.PasswordField
+import net.minecraft.ChatFormatting
+import net.minecraft.client.gui.GuiComponent
+import net.minecraft.client.gui.components.Button
+import net.minecraft.client.gui.components.EditBox
+import net.minecraft.client.gui.screens.Screen
+import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.TextComponent
+import net.minecraft.network.chat.TranslatableComponent
 
 class AuthScreen(private val parent: Screen, private val sessionManager: SessionManager) :
     Screen(TranslatableComponent("gui.authme.auth.title")),

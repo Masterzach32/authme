@@ -1,17 +1,20 @@
 package mcauth.forge
 
-import kotlinx.coroutines.*
-import mcauth.common.*
-import mcauth.common.gui.*
-import mcauth.common.gui.component.*
-import net.minecraft.*
-import net.minecraft.client.gui.*
-import net.minecraft.client.gui.screens.multiplayer.*
-import net.minecraft.network.chat.*
-import net.minecraftforge.api.distmarker.*
-import net.minecraftforge.client.event.*
-import net.minecraftforge.eventbus.api.*
-import net.minecraftforge.fml.common.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import mcauth.common.Logger
+import mcauth.common.Status
+import mcauth.common.gui.AuthScreen
+import mcauth.common.gui.component.AuthButton
+import mcauth.forge.config.Config
+import net.minecraft.ChatFormatting
+import net.minecraft.client.gui.GuiComponent
+import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen
+import net.minecraft.network.chat.TranslatableComponent
+import net.minecraftforge.api.distmarker.Dist
+import net.minecraftforge.client.event.GuiScreenEvent
+import net.minecraftforge.eventbus.api.SubscribeEvent
+import net.minecraftforge.fml.common.Mod
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
 object MultiplayerScreenInject {
@@ -27,12 +30,17 @@ object MultiplayerScreenInject {
             ?: return
 
         Logger.info("Injecting auth button into multiplayer menu")
+        val (x, y) = Config.authButtonPosition.get()
         authButton = AuthButton(
-            6, 6,
+            x, y,
             TranslatableComponent("gui.authme.multiplayer.button.auth"),
             { screen.minecraft.setScreen(AuthScreen(screen, AuthMe.sessionManager)) },
             screen,
-            { _, _ -> }
+            { x, y ->
+                Logger.info("Saving point: $x, $y")
+                Config.authButtonPosition.set(listOf(x, y))
+                Config.authButtonPosition.save()
+            }
         )
         event.addWidget(authButton)
 

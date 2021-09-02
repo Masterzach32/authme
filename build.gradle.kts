@@ -2,10 +2,10 @@ plugins {
     kotlin("jvm") version "1.5.21" apply false
     id("fabric-loom") version "0.9.+" apply false
     id("net.minecraftforge.gradle") version "5.1.+" apply false
-    id("com.github.masterzach32.artifactory") version "0.3.6" apply false
+    id("com.github.masterzach32.artifactory") version "0.3.7" apply false
     kotlin("plugin.serialization") version "1.5.21" apply false
     id("net.researchgate.release") version "2.8.1"
-    id("com.modrinth.minotaur") version "1.2.1" apply false
+    id("com.modrinth.minotaur") version "1.2.1"
     base
     `maven-publish`
     signing
@@ -21,6 +21,7 @@ allprojects {
 
     repositories {
         mavenCentral()
+        maven("https://maven.masterzach32.net/artifactory/minecraft/")
     }
 
     publishing {

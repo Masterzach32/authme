@@ -1,14 +1,13 @@
-import net.minecraftforge.gradle.common.util.*
-import org.jetbrains.kotlin.gradle.tasks.*
-import java.time.*
-import java.time.format.*
+import net.minecraftforge.gradle.common.util.RunConfig
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 plugins {
     kotlin("jvm")
     id("net.minecraftforge.gradle")
     id("com.github.masterzach32.artifactory")
     kotlin("plugin.serialization")
-    id("com.modrinth.minotaur")
     `maven-publish`
     signing
 }
@@ -48,17 +47,12 @@ forge {
     applyInvalidModuleNameFix()
 }
 
-repositories {
-    maven("https://dvs1.progwml6.com/files/maven/")
-    maven("https://modmaven.k-4u.nl")
-}
-
 dependencies {
     minecraft(libs.forge.minecraft)
 
     implementation(libs.kotlinx.coroutines.core)
 
-//    obfRuntimeOnly(libs.forge.jei)
+    obfRuntimeOnly(libs.forge.jei)
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,9 +1,9 @@
 package mcauth.fabric
 
-import mcauth.common.*
-import mcauth.fabric.config.*
-import me.shedaniel.autoconfig.*
-import net.fabricmc.api.*
+import mcauth.common.SessionManager
+import mcauth.fabric.config.AuthMeConfig
+import me.shedaniel.autoconfig.ConfigHolder
+import net.fabricmc.api.ClientModInitializer
 
 object AuthMe : ClientModInitializer {
 

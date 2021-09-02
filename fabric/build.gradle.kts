@@ -1,11 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.*
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
     id("fabric-loom")
     id("com.github.masterzach32.artifactory")
     kotlin("plugin.serialization")
-    id("com.modrinth.minotaur")
     `maven-publish`
     signing
 }
